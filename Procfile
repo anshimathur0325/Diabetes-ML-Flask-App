@@ -1,1 +1,1 @@
-web: python3 app.py -p $PORT
+web: bundle exec thin start -p $PORT
