@@ -1,1 +1,1 @@
-web: gunicorn diabetes-ml-flask-app.wsgi --log-file -
+web: gunicorn app:app
