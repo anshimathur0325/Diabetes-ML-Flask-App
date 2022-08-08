@@ -25,4 +25,4 @@ def predict():
     return render_template("index.html", prediction_text=str)
 
 if __name__ == "__main__":
-    flask_app.run(debug=True, host='0.0.0.0', port=80)
+    flask_app.run(debug=True)
