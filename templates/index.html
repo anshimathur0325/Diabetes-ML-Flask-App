@@ -52,7 +52,7 @@
 	<h1 style="text-align: center;">Diabetes Prediction</h1>
 
      <!-- Main Input For Receiving Query to our ML -->
-    <form netlify action="{{ url_for('predict')}}"method="post" method="POST" >
+    <form  action="{{ url_for('predict')}}"method="post" netlify netlify-honeypot="bot-field" hidden>
     	<input type="text" name="Pregnancies" placeholder="Pregancies" required="required" />
       <input type="text" name="Glucose" placeholder="Glucose" required="required" />
 		  <input type="text" name="BloodPressure" placeholder="Blood Pressure" required="required" />
