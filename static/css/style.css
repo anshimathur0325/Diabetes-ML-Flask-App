@@ -1,0 +1,41 @@
+
+    body{ 
+      margin-top: 0em;
+      margin-bottom: 2em;
+      margin-left: 2em;
+      margin-right: 2em;
+      background-color:lavender;
+      color:purple;
+      text-align: center;
+    }
+    input{
+      width:12em;
+      padding:0.5em;
+      border-radius:10px;
+      margin:0.5em 0;
+    }
+    button {
+     
+      padding: 15px 25px;
+      font-size: 15px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      outline: none;
+      color: #fff;
+      background-color:purple;
+      border: none;
+      border-radius: 15px;      
+    }
+    #center {
+      display: flex;
+      justify-content: center;
+    } 
+    #big{
+      font-size: 3em;
+    }
+    h1{
+      font-size:4em;
+    }
+    
+    
