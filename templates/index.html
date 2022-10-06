@@ -13,12 +13,12 @@
 <body>
  <div >
 	<h1 style="text-align: center;">Diabetes Prediction</h1>
-
+    <h3>Diabetes is a group of diseases that results in too much sugar in the blood. It is long lasting and affects the body's function as it turn food into energy. The sooner someone is able to identify their risk of diabetes, the sooner they will be able to recieve treatment. </h3>
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}" method="post" netlify netlify-honeypot="bot-field">
     	<input type="text" name="Pregnancies" placeholder="Pregancies" required="required" />
       <input type="text" name="Glucose" placeholder="Glucose" required="required" />
-		  <input type="text" name="BloodPressure" placeholder="Blood Pressure" required="required" />
+		  <input type="text" name="BloodPressure" placeholder="Blood Pressure (Diastolic)" required="required" />
 		  <input type="text" name="SkinThickness" placeholder="Skin Thickness" required="required" />
       <input type="text" name="Insulin" placeholder="Insulin" required="required" />
       <input type="text" name="BMI" placeholder="BMI" required="required" />
