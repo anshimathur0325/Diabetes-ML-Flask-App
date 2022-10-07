@@ -2,6 +2,9 @@ import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
 
+import os
+from flask import send_from_directory
+
 # Create flask app
 app = Flask(__name__)
 model = pickle.load(open("model.pkl", "rb"))
@@ -26,3 +29,8 @@ def predict():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+'''@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+        'favicon.ico',mimetype='image/vnd.microsoft.icon')'''
