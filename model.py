@@ -1,7 +1,8 @@
 import pandas as pd
+from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 import pickle
 
@@ -17,25 +18,26 @@ X = df[features]
 y = df["Outcome"]
 
 # Split the data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, stratify=df.Outcome, random_state=0)
+X_train, X_test, y_train, y_test = train_test_split(X, y, stratify=df.Outcome, random_state=0)
 
-# Feature scaling (not always necessary for Random Forest, but can be done for consistency)
-scaler = StandardScaler()
-X_train_scaled = scaler.fit_transform(X_train)
-X_test_scaled = scaler.transform(X_test)
-
-# Choose a classifier (Random Forest in this case)
-classifier = RandomForestClassifier(n_estimators=150, max_depth=20, min_samples_split=5, min_samples_leaf=2, random_state=0)
+# Choose a classifier (Logistic Regression in this case)
+classifier = LogisticRegression(max_iter=1000)
 
 # Train the classifier
-classifier.fit(X_train_scaled, y_train)
+classifier.fit(X_train, y_train)
 
 # Make predictions on the test set
-predictions = classifier.predict(X_test_scaled)
+predictions = classifier.predict(X_test)
 
 # Evaluate the accuracy of the model
 accuracy = accuracy_score(y_test, predictions)
 print(f"Accuracy: {accuracy:.2f}")
+from sklearn.model_selection import cross_val_score
+
+# Perform cross-validation
+scores = cross_val_score(classifier, X_train, y_train, cv=5)
+print("Cross-Validation Scores:", scores)
+print("Mean Accuracy:", scores.mean())
 
 # Save the trained model to a file
 with open("model.pkl", "wb") as model_file:
