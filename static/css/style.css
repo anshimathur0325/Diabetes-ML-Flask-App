@@ -1,12 +1,13 @@
 
     body{ 
       margin-top: 0em;
-      margin-bottom: 2em;
+      /* margin-bottom: 2em; */
       margin-left: 2em;
       margin-right: 2em;
       background-color:lavender;
       color:purple;
       text-align: center;
+      font-family:Georgia, 'Times New Roman', Times, serif;
     }
     input{
       width:12em;
@@ -33,12 +34,16 @@
     } 
     #big{
       color:orangered;
-      font-size: 2em;
+      font-size: 1.5em;
+      background-color:rgb(255, 255, 237);
+      line-height: 0.5;
+      padding-bottom: 1em;
+      padding-top: 0.1em;
+      border-radius: 10em;
+      
     }
     h1{
       font-size:3.5em;
     }
     
-    footer{
-      bottom:0em;
-    }
+    

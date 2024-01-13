@@ -15,9 +15,11 @@
 
 <body>
  <div >
-	<h1 style="text-align: center;">Diabetes Prediction</h1>
+	<h1 style="text-align: center; margin-bottom: 0px;">Diabetes Prediction</h1>
+  
     <h3>Diabetes is a group of diseases that results in too much sugar in the blood. It is long-lasting and affects the body's function by turning food into energy. The sooner someone can identify their risk of diabetes, the sooner they will be able to receive treatment.
  </h3>
+ <h5 style = "color: black">made by <a href = "https://anshimathur1.netlify.app/">anshi mathur</a></h5>
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}" method="post" netlify netlify-honeypot="bot-field">
     	<input type="text" name="Pregnancies" placeholder="Pregancies" required="required" />
@@ -30,15 +32,15 @@
 		  <input type="text" name="Age" placeholder="Age" required="required" />
       <br>
       <br>
-      <div id="big">
-      
-      {{ prediction_text }}
-      </div>
-      <hr>
-      <br>
       <div id="center">
         <button type="submit" >Predict</button>
       </div>
+      <br>
+      <div id="big">
+      <p style="color:black">Your Prediction:</p>
+      {{ prediction_text }}
+      </div>
+      
     </form>
 
      
