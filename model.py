@@ -10,10 +10,10 @@ import pickle
 df = pd.read_csv("diabetes.csv")
 
 # Remove rows with zero values in specific columns
-df = df[(df.BloodPressure != 0) & (df.BMI != 0) & (df.Glucose != 0)]
-
+df = df[(df.BloodPressure != 0) & (df.BMI != 0) & (df.Glucose != 0) & (df.SkinThickness != 0)& (df.Age != 0) & (df.Insulin != 0)]
+df.to_csv('cleaned.csv')
 # Define features (X) and target variable (y)
-features = ["Pregnancies", "Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI", "DiabetesPedigreeFunction", "Age"]
+features = ["Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI", "DiabetesPedigreeFunction", "Age"]
 X = df[features]
 y = df["Outcome"]
 

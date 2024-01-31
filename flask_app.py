@@ -21,9 +21,9 @@ def predict():
     str=prediction[0]
     
     if prediction[0]==1:
-      str="You may have diabetes."
+      str="You have a chance of getting diabetes."
     else:
-      str="You probably do not have diabetes."
+      str="You have a lower chance of getting diabetes."
     
     return render_template("index.html", prediction_text=str)
 
