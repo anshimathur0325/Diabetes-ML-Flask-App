@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html>
 
-  
-
-
 <head>
   <meta charset="UTF-8">
   <title>Diabetes Prediction</title>
   <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
 
 </head>
 <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
@@ -16,13 +14,20 @@
 <body>
  <div >
 	<h1 style="text-align: center; margin-bottom: 0px;">Diabetes Prediction</h1>
-  
-    <h3>Diabetes is a group of diseases that results in too much sugar in the blood. It is long-lasting and affects the body's function by turning food into energy. The sooner someone can identify their risk of diabetes, the sooner they will be able to receive treatment.
- </h3>
- <h5 style = "color: black">made by <a href = "https://anshimathur1.netlify.app/">anshi mathur</a></h5>
+  <h2 style = "color: white; font-size: 1em;">made by <a href = "https://anshimathur1.netlify.app/">anshi mathur</a></h2>
+  <div id="info">
+    <h2>What is diabetes?</h2>
+    <ul>
+  <li>Diabetes is a disease that occurs when the body cannot produce insulin or can't regulate its production. </li>
+  <li>It is long-lasting and can cause serious problems like heart disease and vision loss. </li>
+</ul>
+  <h3>The earlier someone identifies their risk of diabetes, the sooner they can start receiving necessary treatment.
+ </h3></div>
+ <br>
+ <p>Enter your information to see if you are at risk of getting diabetes:</p>
+ <div id="input">
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}" method="post" netlify netlify-honeypot="bot-field">
-    	<input type="text" name="Pregnancies" placeholder="Pregancies" required="required" />
       <input type="text" name="Glucose" placeholder="Glucose" required="required" />
 		  <input type="text" name="BloodPressure" placeholder="Blood Pressure (Diastolic)" required="required" />
 		  <input type="text" name="SkinThickness" placeholder="Skin Thickness (mm)" required="required" />
@@ -30,14 +35,13 @@
       <input type="text" name="BMI" placeholder="BMI" required="required" />
 		  <input type="text" name="DiabetesPedigreeFunction" placeholder="Diabetes Pedigree Function" required="required" />
 		  <input type="text" name="Age" placeholder="Age" required="required" />
-      <br>
+    </div>
       <br>
       <div id="center">
         <button type="submit" >Predict</button>
       </div>
-      <br>
+      <p style="color:white;font-size: 2em;">Your Prediction:</p>
       <div id="big">
-      <p style="color:black">Your Prediction:</p>
       {{ prediction_text }}
       </div>
       

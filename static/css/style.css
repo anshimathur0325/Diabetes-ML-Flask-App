@@ -1,49 +1,93 @@
 
-    body{ 
-      margin-top: 0em;
-      /* margin-bottom: 2em; */
-      margin-left: 2em;
-      margin-right: 2em;
-      background-color:lavender;
-      color:purple;
-      text-align: center;
-      font-family:Georgia, 'Times New Roman', Times, serif;
-    }
-    input{
-      width:12em;
-      padding:.5em;
-      border-radius:.5em;
-      margin:0.5em 0;
-    }
-    button {
-     
-      padding: 15px 25px;
-      font-size: 15px;
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-      outline: none;
-      color: #fff;
-      background-color:purple;
-      border: none;
-      border-radius: 15px;      
-    }
-    #center {
-      display: flex;
-      justify-content: center;
-    } 
-    #big{
-      color:orangered;
-      font-size: 1.5em;
-      background-color:#f6e6dd;
-      line-height: 0.5;
-      padding-bottom: 1em;
-      padding-top: 0.1em;
-      border-radius: 10em;
+body{ 
+  margin-top: 0em;
+  /* margin-bottom: 2em; */
+  margin-left: 3em;
+  margin-right: 3em;
+  background-color:#190c1d;
+  color:white;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+}
+input{
+  width:13em;
+  padding:.5em;
+  border-radius:.5em;
+  margin:0.5em 0;
+  font-family: 'Quicksand', sans-serif;
+}
+button {
+  
+  padding: 15px 25px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color:rgb(228, 2, 228);
+  border: none;
+  border-radius: 15px;   
+  font-family: 'Quicksand', sans-serif;   
+}
+#center {
+  display: flex;
+  justify-content: center;
+} 
+#big{
+  color:orangered;
+  font-size: 1.5em;
+  background-color:white;
+  padding-bottom: 1em;
+  padding-top: 1em;
+  border-radius: 10em;
+  width:15em;
+  margin-left: auto;
+  margin-right: auto;
+}
+h1{
+  font-size:3.5em;
+  color:rgb(228, 2, 228);
+}
+
       
-    }
-    h1{
-      font-size:3.5em;
-    }
-    
-    
+a:visited {
+  color: lightblue;
+}
+
+a:link {
+  color: hotpink;
+}
+
+a:hover {
+  color: hotpink;
+}
+
+#info {
+  background-color:rgba(255, 255, 255, 0.044);
+  border-radius: 1em;
+  padding:0.5em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  width: 65%;
+  margin: auto;
+  margin-bottom: 1em;
+  text-align: center;
+}
+ul{
+  text-align: left;
+}
+
+h3{
+  color:orange;
+}
+#input{
+  background-color:rgba(255, 255, 255, 0.044);
+  border-radius: 1em;
+  padding:0.5em;
+  width: 100%;
+  margin: auto;
+  margin-top: 0em;
+  text-align: center;
+}
+
