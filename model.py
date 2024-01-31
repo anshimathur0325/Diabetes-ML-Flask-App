@@ -15,6 +15,7 @@ df.to_csv('cleaned.csv')
 # Define features (X) and target variable (y)
 features = ["Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI", "DiabetesPedigreeFunction", "Age"]
 X = df[features]
+X = X.values
 y = df["Outcome"]
 
 # Split the data into training and testing sets
