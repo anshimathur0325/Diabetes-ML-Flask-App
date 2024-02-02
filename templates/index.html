@@ -26,15 +26,85 @@
  <br>
  <p>Enter your information to see if you are at risk of getting diabetes:</p>
  <div id="input">
+  <!-- ["HighBP", "HighChol", "CholCheck", "BMI", "Smoker", "Stroke", "HeartDiseaseorAttack","PhysActivity","HvyAlcoholConsump","AnyHealthcare","GenHlth","MentHlth","PhysHlth","DiffWalk","Sex","Age","Education","Income"] -->
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}" method="post" netlify netlify-honeypot="bot-field">
-      <input type="text" name="Glucose" placeholder="Glucose" required="required" />
-		  <input type="text" name="BloodPressure" placeholder="Blood Pressure (Diastolic)" required="required" />
-		  <input type="text" name="SkinThickness" placeholder="Skin Thickness (mm)" required="required" />
-      <input type="text" name="Insulin" placeholder="Blood Glucose (mg/dL)" required="required" />
+      <p>Enter if you have high blood pressure (Yes=1 No=0)</p>
+      <input type="text" name="HighBP" placeholder="High BP?" title="Yes=1 No=0" required="required" />
+      <p>Enter if you have high cholesterol pressure (Yes=1 No=0)</p>
+		  <input type="text" name="HighChol" placeholder="High Cholesterol?" title="Yes=1 No=0" required="required" />
+      <p>Have you checked your cholesterol in the past 5 years (Yes=1 No=0)</p>
+		  <input type="text" name="CholCheck" placeholder="Checked Cholesterol in 5 years?"title="Yes=1 No=0" required="required" />
+      <p>Enter your BMI</p>
       <input type="text" name="BMI" placeholder="BMI" required="required" />
-		  <input type="text" name="DiabetesPedigreeFunction" placeholder="Diabetes Pedigree Function" required="required" />
-		  <input type="text" name="Age" placeholder="Age" required="required" />
+      <p>Enter whether you smoke or have smoked (Yes=1 No=0)</p>
+      <input type="text" name="Smoker" placeholder="Smoke?" title="Yes=1 No=0" required="required" />
+      <p>Enter if you have ever had a stroke (Yes=1 No=0)</p>
+		  <input type="text" name="Stroke" placeholder="Have had a stroke?" title="Yes=1 No=0" required="required" />
+      <p>Enter if you have ever suffered from a heart disease or attack (Yes=1 No=0)</p>
+		  <input type="text" name="HeartDiseaseorAttack" placeholder="Heart disease or attack?" title="Yes=1 No=0" required="required" />
+      <p>Enter if you have had physical activity within the past 30 days (Yes=1 No=0)</p>
+      <input type="text" name="PhysActivity" placeholder="Physical activity within past 30 days?"title="Yes=1 No=0" required="required" />
+      <p>Enter if you partake in heavy alcohol consumption (Yes=1 No=0)</p>
+      <input type="text" name="HvyAlcoholConsump" placeholder="Heavy alcohol consumption?" title="Yes=1 No=0"required="required" />
+      <p>Enter if you have healthcare coverage (Yes=1 No=0)</p>
+      <input type="text" name="AnyHealthcare" placeholder="Healthcare coverage?"title="Yes=1 No=0" required="required" />
+      <p>On a scale of 1 - 5, where 1 is excellent and 5 is poor, enter the state of your general health</p>
+      <input type="text" name="GenHlth" placeholder="General health on a scale of 1 - 5 (1 = excellent)" title="Scale of 1-5 (1=excellent, 5=poor)"required="required" />
+      <p>For how many days during the past 30 days was your mental health not good?</p>
+      <input type="text" name="MentHlth" placeholder="For how many days during the past 30 days was your mental health not good?" required="required" />
+      <p>For how many days during the past 30 days was your physical health not good?</p>
+      <input type="text" name="PhysHlth" placeholder="For how many days during the past 30 days was your physical health not good?" required="required" />
+      <p>Do you have difficulty walking up stairs (Yes=1 No=0)</p>
+      <input type="text" name="DiffWalk" placeholder="Difficulty walking up stairs?" title="Yes=1 No=0" required="required" />
+      <p>Enter your sex assigned at birth: Male = 1, Female = 0</p>
+      <input type="text" name="Sex" placeholder="Sex: Male-1 Female-0" required="required" />
+      <!-- <p>Choose the age category you fit in</p>
+      <input type="text" name="Age" placeholder="Age Category? Hover over this text for categories" title = "1 = 18-24 &#013;2 = 25-29&#013;3 = 30-34&#013;4 = 35-39&#013;5 = 40-44&#013;6 = 45-49&#013;7 = 50-54&#013;8 = 55-59&#013;9 = 60-64 &#013;10 = 65-69&#013;11 = 70-74&#013;12 = 75-79&#013;13 = 80 or older" required="required" /> -->
+      <br>
+      <label for="age">Choose the age category you fit in:</label>
+      <select id="age" name="Age" required>
+        <option value="1">18-24</option>
+        <option value="2">25-29</option>
+        <option value="3">30-34</option>
+        <option value="4">35-39</option>
+        <option value="5">40-44</option>
+        <option value="6">45-49</option>
+        <option value="7">50-54</option>
+        <option value="8">55-59</option>
+        <option value="9">60-64</option>
+        <option value="10">65-69</option>
+        <option value="11">70-74</option>
+        <option value="12">75-79</option>
+        <option value="13">80 or older</option>
+      </select>
+      <!-- <p>Choose the education category you fit in</p>
+      <input type="text" name="Education" placeholder="Education Category? Hover over this text for categories" title= "1 = Never attended school or only kindergarten &#013;2 = Grades 1 through 8 (Elementary) &#013;3 = Grades 9 through 11 (Some high school) &#013;4 = Grade 12 or GED (High school graduate) &#013;5 = College 1 year to 3 years (Some college or technical school) &#013;6 = College 4 years or more (College graduate)"required="required" /> -->
+      <label for="education">Choose the education category you fit in:</label>
+  <select id="education" name="Education" required>
+    <option value="1">Never attended school or only kindergarten</option>
+    <option value="2">Grades 1 through 8 (Elementary)</option>
+    <option value="3">Grades 9 through 11 (Some high school)</option>
+    <option value="4">Grade 12 or GED (High school graduate)</option>
+    <option value="5">College 1 year to 3 years (Some college or technical school)</option>
+    <option value="6">College 4 years or more (College graduate)</option>
+  </select>
+  <br>
+      <!-- <p>Choose the income category you fit in</p>
+      <input type="text" name="Income" placeholder="Income Category? Hover over this text for categories" title="1 = Less than $10,000 &#013;2 = Less than $15,000 ($10,000 to less than $15,000) &#013;3 = Less than $20,000 ($15,000 to less than $20,000) &#013;4 = Less than $25,000 ($20,000 to less than $25,000) &#013;5 = Less than $35,000 ($25,000 to less than $35,000) &#013;6 = Less than $50,000 ($35,000 to less than $50,000) &#013;7 = Less than $75,000 ($50,000 to less than $75,000) &#013;8 = $75,000 or more"required="required" /> -->
+      <label for="income">Choose the income category you fit in:</label>
+      <select id="income" name="Income" required>
+        <option value="1">Less than $10,000</option>
+        <option value="2">Less than $15,000 ($10,000 to less than $15,000)</option>
+        <option value="3">Less than $20,000 ($15,000 to less than $20,000)</option>
+        <option value="4">Less than $25,000 ($20,000 to less than $25,000)</option>
+        <option value="5">Less than $35,000 ($25,000 to less than $35,000)</option>
+        <option value="6">Less than $50,000 ($35,000 to less than $50,000)</option>
+        <option value="7">Less than $75,000 ($50,000 to less than $75,000)</option>
+        <option value="8">$75,000 or more</option>
+      </select>
+      <br>
+    </select>
     </div>
       <br>
       <div id="center">
@@ -46,8 +116,9 @@
       </div>
       
     </form>
-
-     
+    <br>
+     <br>
+     <br>
  </div>
 
 </body>

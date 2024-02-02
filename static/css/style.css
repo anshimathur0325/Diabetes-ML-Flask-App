@@ -10,10 +10,11 @@ body{
   font-family: 'Quicksand', sans-serif;
 }
 input{
-  width:13em;
+  width:75%;
+  height: 3em;
   padding:.5em;
   border-radius:.5em;
-  margin:0.5em 0;
+  margin-bottom:2%;
   font-family: 'Quicksand', sans-serif;
 }
 button {
@@ -85,9 +86,13 @@ h3{
   background-color:rgba(255, 255, 255, 0.044);
   border-radius: 1em;
   padding:0.5em;
-  width: 100%;
-  margin: auto;
+  width: 95%;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
   margin-top: 0em;
   text-align: center;
 }
-
+input[title]:hover::after {
+  
+  color:red;
+}

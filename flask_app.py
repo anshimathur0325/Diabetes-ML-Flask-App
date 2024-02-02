@@ -16,12 +16,15 @@ def Home():
 @app.route("/predict", methods = ["POST"])
 def predict():
     float_features = [float(x) for x in request.form.values()]
+    print(float_features)
     features = [np.array(float_features)]
     prediction = model.predict(features)
     str=prediction[0]
     
     if prediction[0]==1:
-      str="You have a chance of getting diabetes."
+      str="You have a chance of being prediabetic."
+    elif prediction[0]==2:
+      str="You have a strong chance of being diabetic."
     else:
       str="You have a lower chance of getting diabetes."
     
