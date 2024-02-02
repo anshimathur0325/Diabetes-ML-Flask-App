@@ -70,7 +70,7 @@ a:hover {
   padding:0.5em;
   padding-left: 1.5em;
   padding-right: 1.5em;
-  width: 65%;
+  width: 75%;
   margin: auto;
   margin-bottom: 1em;
   text-align: center;
@@ -87,9 +87,10 @@ h3{
   border-radius: 1em;
   padding:0.5em;
   width: 95%;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
+  /* padding-left: 1.5em;
+  padding-right: 1.5em; */
   margin-top: 0em;
+  margin:auto;
   text-align: center;
 }
 input[title]:hover::after {
