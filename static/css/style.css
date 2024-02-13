@@ -76,7 +76,8 @@ a:hover {
   text-align: center;
 }
 ul{
-  text-align: left;
+  text-align: center;
+  list-style-type: "";
 }
 
 h3{
@@ -96,4 +97,8 @@ h3{
 input[title]:hover::after {
   
   color:red;
+}
+h2 {
+  font-size: 200%;
+  font-family: 'Quicksand', sans-serif;
 }
